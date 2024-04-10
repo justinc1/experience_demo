@@ -1,0 +1,39 @@
+---
+# Labels
+#
+controller_labels:
+  - name: operations
+    organization: Default
+
+# Projects
+#
+controller_projects:
+  - name: Experience Demo Playbooks Project
+    organization: Default
+    scm_branch: main
+    scm_clean: 'no'
+    scm_delete_on_update: 'no'
+    scm_type: git
+    scm_update_on_launch: 'no'
+    scm_url: https://github.com/Spredzy/experience_demo.git
+
+
+# Job Templates
+#
+controller_templates:
+  - name: Operations / Compliance PCI-DSS
+    instance_groups:
+      - default
+    inventory: Demo Inventory
+    project: Experience Demo Playbooks Project
+    playbook: extensions/experiences/compliance/playbooks/compliance_pci_dss.yml
+    job_tags: operations
+    labels: operations
+  - name: Operations / Compliance DISA STIG
+    instance_groups:
+      - default
+    inventory: Demo Inventory
+    project: Experience Demo Playbooks Project
+    playbook: extensions/experiences/compliance/playbooks/compliance_disa_stig.yml
+    job_tags: operations
+    labels: operations

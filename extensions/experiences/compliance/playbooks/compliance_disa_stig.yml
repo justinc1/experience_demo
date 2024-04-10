@@ -1,0 +1,6 @@
+---
+- name: Compliance DISA STIG
+  hosts: localhost
+  tasks:
+    - debug:
+        msg: 'Compliance DISA STIG'
