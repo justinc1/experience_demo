@@ -1,0 +1,6 @@
+---
+- name: Patching CVE
+  hosts: localhost
+  tasks:
+    - debug:
+        msg: 'Patching CVE'
