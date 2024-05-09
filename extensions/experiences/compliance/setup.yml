@@ -22,20 +22,16 @@ controller_projects:
 #
 controller_templates:
   - name: Operations / Compliance PCI-DSS
-    instance_groups:
-      - default
-    inventory: Demo Inventory
+    ask_inventory_on_launch: true
     execution_environment: ee_experience_demo_compliance
     project: Experience Demo Playbooks Project
     playbook: extensions/experiences/compliance/playbooks/compliance_pci_dss.yml
     job_tags: operations
     labels: operations
   - name: Operations / Compliance DISA STIG
-    instance_groups:
-      - default
-    inventory: Demo Inventory
-    project: Experience Demo Playbooks Project
+    ask_inventory_on_launch: true
     execution_environment: ee_experience_demo_compliance
+    project: Experience Demo Playbooks Project
     playbook: extensions/experiences/compliance/playbooks/compliance_disa_stig.yml
     job_tags: operations
     labels: operations
