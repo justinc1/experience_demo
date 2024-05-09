@@ -2,5 +2,10 @@
 - name: Compliance DISA STIG
   hosts: localhost
   tasks:
-    - debug:
-        msg: 'Compliance DISA STIG'
+    - name: Generate a new message
+      ansible.builtin.set_fact:
+        message: 'Compliance DISA STIG'
+
+    - name: Display message
+      ansible.builtin.debug:
+        msg: "{{ message }}"
