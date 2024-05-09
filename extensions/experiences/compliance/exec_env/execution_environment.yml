@@ -2,6 +2,10 @@
 version: 3
 
 dependencies:
+  ansible_core:
+    package_pip: ansible-core
+  ansible_runner:
+    package_pip: ansible-runner
   python:
     - six
     - psutil
