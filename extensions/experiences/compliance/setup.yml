@@ -24,12 +24,12 @@ controller_templates:
   - name: Operations / Compliance PCI-DSS
     ask_inventory_on_launch: true
     execution_environment: ee_experience_demo_compliance
-    project: Experience Demo Playbooks Project
-    playbook: extensions/experiences/compliance/playbooks/compliance_pci_dss.yml
     labels: operations
+    playbook: extensions/experiences/compliance/playbooks/compliance_pci_dss.yml
+    project: Experience Demo Playbooks Project
   - name: Operations / Compliance DISA STIG
     ask_inventory_on_launch: true
     execution_environment: ee_experience_demo_compliance
-    project: Experience Demo Playbooks Project
-    playbook: extensions/experiences/compliance/playbooks/compliance_disa_stig.yml
     labels: operations
+    playbook: extensions/experiences/compliance/playbooks/compliance_disa_stig.yml
+    project: Experience Demo Playbooks Project

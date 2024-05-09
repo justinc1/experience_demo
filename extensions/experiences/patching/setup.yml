@@ -22,18 +22,14 @@ controller_projects:
 #
 controller_templates:
   - name: Operations / Patch Linux Boxes
-    instance_groups:
-      - default
-    inventory: Demo Inventory
-    project: Experience Demo Playbooks Project
+    ask_inventory_on_launch: true
+    execution_environment: ee_experience_demo_compliance
+    labels: operations
     playbook: extensions/experiences/patching/playbooks/patch_cve.yml
-    job_tags: operations
-    labels: operations
-  - name: Operations / Patch Windows Boxes
-    instance_groups:
-      - default
-    inventory: Demo Inventory
     project: Experience Demo Playbooks Project
-    playbook: extensions/experiences/patching/playbooks/patch_windows.yml
-    job_tags: operations
+  - name: Operations / Patch Windows Boxes
+    ask_inventory_on_launch: true
+    execution_environment: ee_experience_demo_compliance
     labels: operations
+    playbook: extensions/experiences/patching/playbooks/patch_windows.yml
+    project: Experience Demo Playbooks Project
