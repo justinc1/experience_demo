@@ -25,6 +25,7 @@ controller_templates:
     instance_groups:
       - default
     inventory: Demo Inventory
+    execution_environment: ee_experience_demo_compliance
     project: Experience Demo Playbooks Project
     playbook: extensions/experiences/compliance/playbooks/compliance_pci_dss.yml
     job_tags: operations
@@ -34,6 +35,7 @@ controller_templates:
       - default
     inventory: Demo Inventory
     project: Experience Demo Playbooks Project
+    execution_environment: ee_experience_demo_compliance
     playbook: extensions/experiences/compliance/playbooks/compliance_disa_stig.yml
     job_tags: operations
     labels: operations
