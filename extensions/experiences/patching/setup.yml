@@ -23,13 +23,11 @@ controller_projects:
 controller_templates:
   - name: Operations / Patch Linux Boxes
     ask_inventory_on_launch: true
-    execution_environment: ee_experience_demo_compliance
     labels: operations
     playbook: extensions/experiences/patching/playbooks/patch_cve.yml
     project: Experience Demo Playbooks Project
   - name: Operations / Patch Windows Boxes
     ask_inventory_on_launch: true
-    execution_environment: ee_experience_demo_compliance
     labels: operations
     playbook: extensions/experiences/patching/playbooks/patch_windows.yml
     project: Experience Demo Playbooks Project
