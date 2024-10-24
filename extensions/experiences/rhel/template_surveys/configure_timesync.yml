@@ -1,0 +1,42 @@
+survey_enabled: true
+survey:
+  - question_name: "NTP Servers"
+    question_description: "Provide the list of NTP servers to be configured, e.g., '0.rhel.pool.ntp.org', '1.rhel.pool.ntp.org'."
+    required: true
+    variable: "ntp_servers"
+    type: "text"
+    default: "0.rhel.pool.ntp.org, 1.rhel.pool.ntp.org"
+
+  - question_name: "Timezone"
+    question_description: "Specify the timezone for the time server configuration. Default is UTC."
+    required: false
+    variable: "timezone"
+    type: "text"
+    default: "UTC"
+
+  - question_name: "Apply Changes to All Hosts"
+    question_description: "Should these changes be applied to all hosts in the inventory?"
+    required: true
+    variable: "apply_to_all"
+    type: "multiplechoice"
+    choices:
+      - "Yes"
+      - "No"
+    default: "Yes"
+
+  - question_name: "Notification Email"
+    question_description: "Provide an email address to notify when the task completes. Leave blank if no notification is needed."
+    required: false
+    variable: "notification_email"
+    type: "text"
+    default: ""
+
+  - question_name: "Service Restart Confirmation"
+    question_description: "Do you want to restart the chronyd service to apply the new configuration?"
+    required: true
+    variable: "restart_service"
+    type: "multiplechoice"
+    choices:
+      - "Yes"
+      - "No"
+    default: "Yes"

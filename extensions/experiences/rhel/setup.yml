@@ -1,0 +1,41 @@
+---
+# Labels
+#
+controller_labels:
+  - name:
+      - operations
+      - rhel
+      - configure-timesync
+    organization: "{{ organization | default('Default') }}"
+
+# Projects
+#
+controller_projects:
+  - name: Ansible Portal Operations
+    organization: "{{ organization | default('Default') }}"
+    scm_branch: feature-rhel-aa
+    scm_clean: false
+    scm_delete_on_update: true
+    scm_type: git
+    scm_update_on_launch: true
+    scm_url: https://github.com/craig-br/experience_demo.git
+
+
+# Job Templates
+#
+controller_templates:
+  - name: Operations / RHEL / Update RHEL Time Servers
+    ask_inventory_on_launch: true
+    playbook: extensions/experiences/rhel/playbooks/site.yml
+    project: Experience Demo Playbooks Project
+    labels:
+      - operations
+      - rhel
+      - configure-timesync
+  # - name: Operations / Patch Windows Boxes
+  #   ask_inventory_on_launch: true
+  #   labels:
+  #     - operations
+  #     - rhel
+  #   playbook: extensions/experiences/patching/playbooks/patch_windows.yml
+  #   project: Experience Demo Playbooks Project

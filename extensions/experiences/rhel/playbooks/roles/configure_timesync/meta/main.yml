@@ -1,0 +1,19 @@
+galaxy_info:
+  author: Craig Brandt
+  company: Red Hat, Inc.
+  description: This role uses the RHEL Certified Collection to manage Time Servers
+
+  license: MIT
+  min_ansible_version: "2.9"
+  galaxy_tags:
+    - portal
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: EL
+      versions:
+        - "8"
+        - "9"
+collections:
+  - redhat.rhel_system_roles

@@ -1,0 +1,29 @@
+# Arguments Specification for the configure_timesync Role
+
+- name: restart_chronyd_service
+  required: false
+  description: Boolean to specify if the chronyd service should be restarted after making configuration changes.
+  type: bool
+  default: true
+  example: false
+
+- name: user_ntp_servers
+  required: false
+  description: A list of NTP server addresses to use for time synchronization. These can be set by the user, or default values are used.
+  type: list
+  elements: str
+  default:
+    - '0.rhel.pool.ntp.org'
+    - '1.rhel.pool.ntp.org'
+    - '2.rhel.pool.ntp.org'
+    - '3.rhel.pool.ntp.org'
+  example:
+    - 'time.example.com'
+    - 'ntp.example.org'   - 'ntp.example.org'
+
+- name: user_timezone
+  required: false
+  description: Specifies the timezone to set on the server.
+  type: str
+  default: "UTC"
+  example: "America/New_York"

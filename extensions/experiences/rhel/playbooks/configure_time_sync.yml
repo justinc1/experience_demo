@@ -1,0 +1,6 @@
+---
+- name: Configure timesync using the RHEL System Roles Collection
+  hosts: all
+  become: true
+  roles:
+    - role: configure_timesync
