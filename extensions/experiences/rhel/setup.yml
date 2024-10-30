@@ -17,7 +17,7 @@ controller_projects:
     scm_delete_on_update: true
     scm_type: git
     scm_update_on_launch: true
-    scm_url: https://github.com/craig-br/experience_demo.git
+    scm_url: https://github.com/craig-br/portal_experience_demo.git
 
 
 # Job Templates
