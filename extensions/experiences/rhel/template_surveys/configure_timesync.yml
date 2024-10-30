@@ -1,3 +1,4 @@
+---
 survey_enabled: true
 survey:
   - question_name: "NTP Servers"

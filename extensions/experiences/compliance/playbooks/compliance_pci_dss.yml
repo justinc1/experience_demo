@@ -1,6 +1,0 @@
----
-- name: Compliance PCI DSS
-  hosts: localhost
-  tasks:
-    - debug:
-        msg: 'Compliance PCI DSS'

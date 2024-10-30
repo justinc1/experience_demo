@@ -1,6 +1,0 @@
----
-- name: Patching Windows
-  hosts: localhost
-  tasks:
-    - debug:
-        msg: 'Patching Windows'
