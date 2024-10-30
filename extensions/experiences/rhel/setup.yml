@@ -26,16 +26,9 @@ controller_projects:
 controller_templates:
   - name: Operations / RHEL / Update RHEL Time Servers
     ask_inventory_on_launch: true
-    playbook: extensions/experiences/rhel/playbooks/site.yml
+    playbook: extensions/experiences/rhel/playbooks/configure_timesync.yml
     project: Experience Demo Playbooks Project
     labels:
       - operations
       - rhel
       - configure-timesync
-  # - name: Operations / Patch Windows Boxes
-  #   ask_inventory_on_launch: true
-  #   labels:
-  #     - operations
-  #     - rhel
-  #   playbook: extensions/experiences/patching/playbooks/patch_windows.yml
-  #   project: Experience Demo Playbooks Project
