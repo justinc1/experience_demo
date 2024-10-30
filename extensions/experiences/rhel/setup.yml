@@ -2,8 +2,6 @@
 # Labels
 #
 controller_labels:
-  - name: operations
-    organization: "{{ organization | default('Default') }}"
   - name: rhel
     organization: "{{ organization | default('Default') }}"
   - name: configure-timesync
@@ -25,11 +23,10 @@ controller_projects:
 # Job Templates
 #
 controller_templates:
-  - name: Operations / RHEL / Update RHEL Time Servers
+  - name: RHEL / Update RHEL Time Servers
     ask_inventory_on_launch: true
     playbook: extensions/experiences/rhel/playbooks/configure_timesync.yml
-    project: Experience Demo Playbooks Project
+    project: Ansible Portal Operations
     labels:
-      - operations
       - rhel
       - configure-timesync
