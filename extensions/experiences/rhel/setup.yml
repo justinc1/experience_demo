@@ -2,10 +2,11 @@
 # Labels
 #
 controller_labels:
-  - name:
-      - operations
-      - rhel
-      - configure-timesync
+  - name: operations
+    organization: "{{ organization | default('Default') }}"
+  - name: rhel
+    organization: "{{ organization | default('Default') }}"
+  - name: configure-timesync
     organization: "{{ organization | default('Default') }}"
 
 # Projects
