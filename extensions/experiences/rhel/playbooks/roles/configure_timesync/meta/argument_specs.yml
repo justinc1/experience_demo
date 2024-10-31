@@ -1,5 +1,5 @@
+---
 # Arguments Specification for the configure_timesync Role
-
 - name: restart_chronyd_service
   required: false
   description: Boolean to specify if the chronyd service should be restarted after making configuration changes.
@@ -19,7 +19,8 @@
     - '3.rhel.pool.ntp.org'
   example:
     - 'time.example.com'
-    - 'ntp.example.org'   - 'ntp.example.org'
+    - 'ntp.example.org'   
+    - 'ntp.example.org'
 
 - name: user_timezone
   required: false
