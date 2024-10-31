@@ -4,3 +4,18 @@
   become: true
   roles:
     - role: configure_timesync
+  # vars:
+  #   restart_chronyd_service: true
+  #   user_ntp_servers:
+  #     - hostname: '0.rhel.pool.ntp.org'
+  #     - hostname: '1.rhel.pool.ntp.org'
+  #     - hostname: '2.rhel.pool.ntp.org'
+  #     - hostname: '3.rhel.pool.ntp.org'
+  #   user_timezone: "UTC"
+  # tasks:
+  #   - name: Set Time Server Configuration
+  #     ansible.builtin.include_role:
+  #       name: redhat.rhel_system_roles.timesync
+  #     vars:
+  #       timesync_ntp_servers: "{{ user_ntp_servers }}"
+  #       timesync_timezone: "{{ user_timezone }}"

@@ -13,14 +13,14 @@
   type: list
   elements: str
   default:
-    - '0.rhel.pool.ntp.org'
-    - '1.rhel.pool.ntp.org'
-    - '2.rhel.pool.ntp.org'
-    - '3.rhel.pool.ntp.org'
+    - hostname: '0.rhel.pool.ntp.org'
+    - hostname: '1.rhel.pool.ntp.org'
+    - hostname: '2.rhel.pool.ntp.org'
+    - hostname: '3.rhel.pool.ntp.org'
   example:
-    - 'time.example.com'
-    - 'ntp.example.org'   
-    - 'ntp.example.org'
+    - hostname: 'time.example.com'
+    - hostname: 'ntp.example.org'
+    - hostname: 'ntp.example2.org'
 
 - name: user_timezone
   required: false

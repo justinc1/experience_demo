@@ -6,11 +6,11 @@
     timesync_ntp_servers: "{{ user_ntp_servers }}"
     timesync_timezone: "{{ user_timezone }}"
 
-- name: Restart Chronyd Service to Apply Changes
-  ansible.builtin.service:
-    name: chronyd
-    state: restarted
-  when: restart_chronyd_service
+# - name: Restart Chronyd Service to Apply Changes
+#   ansible.builtin.service:
+#     name: chronyd
+#     state: restarted
+#   when: restart_chronyd_service
 
 - name: Print Updated Time Sync Status
   ansible.builtin.command:

@@ -2,8 +2,8 @@
 # Define default variables with appropriate documentation to ensure users know what can be overridden
 restart_chronyd_service: true
 user_ntp_servers:
-  - '0.rhel.pool.ntp.org'
-  - '1.rhel.pool.ntp.org'
-  - '2.rhel.pool.ntp.org'
-  - '3.rhel.pool.ntp.org'
+  - hostname: '0.rhel.pool.ntp.org'
+  - hostname: '1.rhel.pool.ntp.org'
+  - hostname: '2.rhel.pool.ntp.org'
+  - hostname: '3.rhel.pool.ntp.org'
 user_timezone: "UTC"
