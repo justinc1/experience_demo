@@ -30,3 +30,4 @@ controller_templates:
     labels:
       - rhel
       - configure-timesync
+    survey: "{{ lookup('file', 'template_surveys/configure_timesync.yml') }}"
