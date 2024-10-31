@@ -27,7 +27,10 @@ controller_templates:
     ask_inventory_on_launch: true
     playbook: extensions/experiences/rhel/playbooks/configure_timesync.yml
     project: Ansible Portal Operations
+    extra_vars: "{{ survey_extra_vars }}"
+    ask_variables_on_launch: true
+    survey_enabled: true
     labels:
       - rhel
       - configure-timesync
-    survey: "{{ lookup('file', 'template_surveys/configure_timesync.yml') }}"
+    survey_spec: "{{ lookup('file', 'template_surveys/configure_timesync.yml') }}"
