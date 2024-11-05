@@ -1,6 +1,7 @@
 ---
-survey_enabled: true
-survey:
+name: Timesync Survey
+description: Timesync Survey
+spec:
   - question_name: "NTP Servers"
     question_description: "Provide the list of NTP servers to be configured, e.g., '0.rhel.pool.ntp.org', '1.rhel.pool.ntp.org'."
     required: true
