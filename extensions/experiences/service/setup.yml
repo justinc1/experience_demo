@@ -1,0 +1,36 @@
+---
+# Labels
+#
+controller_labels:
+  - name: rhel
+    organization: "{{ organization | default('Default') }}"
+  - name: service
+    organization: "{{ organization | default('Default') }}"
+
+# Projects
+#
+controller_projects:
+  - name: Ansible Experience Services
+    organization: "{{ organization | default('Default') }}"
+    scm_branch: feature-service-aae
+    scm_clean: false
+    scm_delete_on_update: true
+    scm_type: git
+    scm_update_on_launch: true
+    scm_url: https://github.com/justinc1/experience_demo.git
+
+
+# Job Templates
+#
+controller_templates:
+  - name: RHEL / Configure Services
+    ask_inventory_on_launch: true
+    playbook: extensions/experiences/service/playbooks/configure_service.yml
+    project: Ansible Experience Services
+    ask_variables_on_launch: true
+    survey_enabled: true
+    labels:
+      - rhel
+      - service
+    # experience.path - path to setup.yml, it is set by seedseed repo
+    survey_spec: "{{ lookup('file', experience.path.replace('setup.yml', '') + 'template_surveys/configure_service.yml') | from_yaml }}"

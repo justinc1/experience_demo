@@ -1,0 +1,15 @@
+---
+- name: Configure RHEL services
+  hosts: all
+  # gather_facts: false
+  become: true
+  roles:
+    - role: ansible.experience_demo.service
+      vars:
+        service_names: "{{ service_names_str | split }}"
+      # vars:
+      #   service_names:
+      #     - chronyd
+      #     - colord
+      #   service_state: started
+      #   service_enabled: true

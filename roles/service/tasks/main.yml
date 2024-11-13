@@ -1,0 +1,9 @@
+---
+- name: Configure service
+  ansible.builtin.service:
+    name: "{{ __service_name }}"
+    state: "{{ service_state | default(omit) }}"
+    enabled: "{{ service_enabled | default(omit) }}"
+  loop: "{{ service_names }}"
+  loop_control:
+    loop_var: __service_name

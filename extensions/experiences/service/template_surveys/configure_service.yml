@@ -1,0 +1,30 @@
+---
+name: Services Survey
+description: Services Survey
+spec:
+  - question_name: "RHEL Services"
+    question_description: "Provide the list of RHEL services to be configured, e.g., 'chronyd auditd'."
+    required: true
+    variable: "service_names_str"
+    type: "text"
+    default: "chronyd auditd"
+
+  - question_name: "State"
+    question_description: "Specify the state for the services."
+    required: false
+    variable: "service_state"
+    type: "multiplechoice"
+    choices:
+      - "started"
+      - "stopped"
+    # default: "started"
+
+  - question_name: "Enabled at Boot"
+    question_description: "Do you want the services to start at boot?"
+    required: false
+    variable: "service_enabled"
+    type: "multiplechoice"
+    choices:
+      - "Yes"
+      - "No"
+    # default: "Yes"
