@@ -1,0 +1,24 @@
+---
+argument_specs:
+  main:
+    short_description: Manage RHEL services
+    description:
+      - Start or stop RHEL services
+      - Enable or disable services at boot
+    options:
+      service_names:
+        description: Service names to manage
+        required: true
+        type: list
+        elements: str
+      service_state:
+        description: Service state
+        required: false
+        type: str
+        choices:
+          - started
+          - stopped
+      service_enabled:
+        description: Enable or disable service at boot
+        required: false
+        type: bool
