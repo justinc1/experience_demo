@@ -27,7 +27,7 @@ controller_templates:
     ask_inventory_on_launch: true
     playbook: extensions/experiences/rhel/playbooks/configure_timesync.yml
     project: Ansible Portal Operations
-    ask_variables_on_launch: true
+    ask_variables_on_launch: false
     survey_enabled: true
     labels:
       - rhel

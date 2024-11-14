@@ -27,7 +27,7 @@ controller_templates:
     ask_inventory_on_launch: true
     playbook: extensions/experiences/service/playbooks/configure_service.yml
     project: Ansible Experience Services
-    ask_variables_on_launch: true
+    ask_variables_on_launch: false
     survey_enabled: true
     labels:
       - rhel
