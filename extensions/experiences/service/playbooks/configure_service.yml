@@ -1,4 +1,6 @@
 ---
+# local test:
+# ansible-playbook -i localhost, extensions/experiences/service/playbooks/configure_service.yml  -e 'service_names_str="chronyd colord"' -e service_state=stopped -v
 - name: Configure RHEL services
   hosts: all
   # gather_facts: false
@@ -7,7 +9,7 @@
   pre_tasks:
     - name: Install this collection
       ansible.builtin.command:
-        cmd: ansible-galaxy collection install "{{ playbook_dir }}/../../../.." -vvvv
+        cmd: ansible-galaxy collection install "{{ playbook_dir }}/../../../.." --force -vvvv
       environment:
         # With "become: true" command is run as root.
         # But include_role later includes as regular user.
