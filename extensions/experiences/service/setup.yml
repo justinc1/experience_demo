@@ -7,6 +7,18 @@ controller_labels:
   - name: service
     organization: "{{ organization | default('Default') }}"
 
+# Execution Environments
+#
+controller_execution_environments:
+  - name: apd-ee-25
+    description: apd-ee-25
+    image: quay.io/ansible-product-demos/apd-ee-25
+    pull: always
+  - name: apd-ee-25-rhel
+    description: Allow running RHEL experience demo. Based on apd-ee-25.
+    image: quay.io/ansible-product-demos/apd-ee-25
+    pull: always
+
 # Ansible Experience RHEL Inventory
 # Ansible Experience RHEL Credentials
 #  pub: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINpfVbgH2SLbCBR4cRJtn/P+1m7BMMMsWyA0nEaO1FVk centos@vm1.novalocal
@@ -40,3 +52,4 @@ controller_templates:
     survey_spec: "{{ lookup('file', experience.path.replace('setup.yml', '') + 'template_surveys/configure_service.yml') | from_yaml }}"
     inventory: Ansible Experience RHEL Inventory
     credentials: Ansible Experience RHEL Credentials
+    execution_environment: apd-ee-25-rhel
