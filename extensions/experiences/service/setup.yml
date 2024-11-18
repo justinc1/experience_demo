@@ -10,13 +10,13 @@ controller_labels:
 # Execution Environments
 #
 controller_execution_environments:
-  - name: apd-ee-25
-    description: apd-ee-25
-    image: quay.io/ansible-product-demos/apd-ee-25
-    pull: always
+  # - name: apd-ee-25
+  #   description: apd-ee-25
+  #   image: quay.io/ansible-product-demos/apd-ee-25
+  #   pull: always
   - name: apd-ee-25-rhel
     description: Allow running RHEL experience demo. Based on apd-ee-25.
-    image: quay.io/ansible-product-demos/apd-ee-25
+    image: quay.io/justinc1_github/apd-ee-25-experience:latest
     pull: always
 
 # Ansible Experience RHEL Inventory
