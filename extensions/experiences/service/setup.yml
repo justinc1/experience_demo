@@ -7,6 +7,10 @@ controller_labels:
   - name: service
     organization: "{{ organization | default('Default') }}"
 
+# Ansible Experience RHEL Inventory
+# Ansible Experience RHEL Credentials
+#  pub: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINpfVbgH2SLbCBR4cRJtn/P+1m7BMMMsWyA0nEaO1FVk centos@vm1.novalocal
+
 # Projects
 #
 controller_projects:
@@ -34,3 +38,5 @@ controller_templates:
       - service
     # experience.path - path to setup.yml, it is set by seedseed repo
     survey_spec: "{{ lookup('file', experience.path.replace('setup.yml', '') + 'template_surveys/configure_service.yml') | from_yaml }}"
+    inventory: Ansible Experience RHEL Inventory
+    credentials: Ansible Experience RHEL Credentials
