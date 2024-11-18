@@ -1,0 +1,6 @@
+---
+collections:
+  # - name: ansible.experience_demo
+  - name: https://github.com/justinc1/experience_demo.git
+    type: git
+    version: feature-service-aae
