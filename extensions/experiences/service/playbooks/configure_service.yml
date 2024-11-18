@@ -6,22 +6,9 @@
   # gather_facts: false
   # connection: local
   become: true
-  pre_tasks:
-    - name: Install this collection
-      ansible.builtin.command:
-        cmd: ansible-galaxy collection install "{{ playbook_dir }}/../../../.." --force -vvvv
-      environment:
-        # With "become: true" command is run as root.
-        # But include_role later includes as regular user.
-        # Install the collection globaly.
-        ANSIBLE_COLLECTIONS_PATH: /usr/share/ansible/collections
-      register: galaxy_result
-      changed_when: "'Starting collection install process' in galaxy_result.stdout"
 
-  tasks:
-    - name: Run role
-      ansible.builtin.include_role:
-        name: ansible.experience_demo.service
+  roles:
+    - name: ansible.experience_demo.service
       vars:
         service_names: "{{ service_names_str | split }}"
       # vars:
