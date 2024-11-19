@@ -50,7 +50,7 @@ controller_templates:
       - service
     # experience.path - path to setup.yml, it is set by seedseed repo
     survey_spec: "{{ lookup('file', experience.path.replace('setup.yml', '') + 'template_surveys/configure_service.yml') | from_yaml }}"
-    inventory: Ansible Experience RHEL Inventory
-    credentials: Ansible Experience RHEL Credentials
+    # inventory: Ansible Experience RHEL Inventory
+    # credentials: Ansible Experience RHEL Credentials
     ask_credential_on_launch: true
     execution_environment: apd-ee-25-rhel
