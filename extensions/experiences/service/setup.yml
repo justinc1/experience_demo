@@ -2,26 +2,20 @@
 # Labels
 #
 controller_labels:
-  - name: rhel
+  - name: ansible.experience_demo
     organization: "{{ organization | default('Default') }}"
-  - name: service
+  - name: services_experience
+    organization: "{{ organization | default('Default') }}"
+  - name: run_services_experience
     organization: "{{ organization | default('Default') }}"
 
 # Execution Environments
 #
 controller_execution_environments:
-  # - name: apd-ee-25
-  #   description: apd-ee-25
-  #   image: quay.io/ansible-product-demos/apd-ee-25
-  #   pull: always
   - name: apd-ee-25-rhel
     description: Allow running RHEL experience demo. Based on apd-ee-25.
     image: quay.io/justinc1_github/apd-ee-25-experience:latest
     pull: always
-
-# Ansible Experience RHEL Inventory
-# Ansible Experience RHEL Credentials
-#  pub: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINpfVbgH2SLbCBR4cRJtn/P+1m7BMMMsWyA0nEaO1FVk centos@vm1.novalocal
 
 # Projects
 #
@@ -35,7 +29,6 @@ controller_projects:
     scm_update_on_launch: true
     scm_url: https://github.com/justinc1/experience_demo.git
 
-
 # Job Templates
 #
 controller_templates:
@@ -46,8 +39,9 @@ controller_templates:
     ask_variables_on_launch: false
     survey_enabled: true
     labels:
-      - rhel
-      - service
+      - ansible.experience_demo
+      - services_experience
+      - run_services_experience
     # experience.path - path to setup.yml, it is set by seedseed repo
     survey_spec: "{{ lookup('file', experience.path.replace('setup.yml', '') + 'template_surveys/configure_service.yml') | from_yaml }}"
     # inventory: Ansible Experience RHEL Inventory

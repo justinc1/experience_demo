@@ -2,9 +2,11 @@
 # Labels
 #
 controller_labels:
-  - name: rhel
+  - name: ansible.experience_demo
     organization: "{{ organization | default('Default') }}"
-  - name: configure-timesync
+  - name: timesync_experience
+    organization: "{{ organization | default('Default') }}"
+  - name: run_timesync_experience
     organization: "{{ organization | default('Default') }}"
 
 # Projects
@@ -19,7 +21,6 @@ controller_projects:
     scm_update_on_launch: true
     scm_url: https://github.com/justinc1/experience_demo.git
 
-
 # Job Templates
 #
 controller_templates:
@@ -30,7 +31,8 @@ controller_templates:
     ask_variables_on_launch: false
     survey_enabled: true
     labels:
-      - rhel
-      - configure-timesync
+      - ansible.experience_demo
+      - timesync_experience
+      - run_timesync_experience
     # experience.path - path to setup.yml, it is set by seedseed repo
     survey_spec: "{{ lookup('file', experience.path.replace('setup.yml', '') + 'template_surveys/configure_timesync.yml') | from_yaml }}"
