@@ -4,9 +4,9 @@
 controller_labels:
   - name: ansible.experience_demo
     organization: "{{ organization | default('Default') }}"
-  - name: services_experience
+  - name: rhel_Pattern
     organization: "{{ organization | default('Default') }}"
-  - name: run_services_experience
+  - name: run_service_configuration
     organization: "{{ organization | default('Default') }}"
 
 # Execution Environments
@@ -20,7 +20,7 @@ controller_execution_environments:
 # Projects
 #
 controller_projects:
-  - name: Ansible Experience Services
+  - name: RHEL / Project
     organization: "{{ organization | default('Default') }}"
     scm_branch: feature-service-aae
     scm_clean: false
@@ -33,15 +33,16 @@ controller_projects:
 #
 controller_templates:
   - name: RHEL / Configure Services
+    description: This job template starts or stops RHEL services
     ask_inventory_on_launch: true
     playbook: extensions/experiences/service/playbooks/configure_service.yml
-    project: Ansible Experience Services
+    project: RHEL / Project
     ask_variables_on_launch: false
     survey_enabled: true
     labels:
       - ansible.experience_demo
-      - services_experience
-      - run_services_experience
+      - rhel_Pattern
+      - run_service_configuration
     # experience.path - path to setup.yml, it is set by seedseed repo
     survey_spec: "{{ lookup('file', experience.path.replace('setup.yml', '') + 'template_surveys/configure_service.yml') | from_yaml }}"
     # inventory: Ansible Experience RHEL Inventory

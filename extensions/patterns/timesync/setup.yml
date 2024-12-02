@@ -4,17 +4,25 @@
 controller_labels:
   - name: ansible.experience_demo
     organization: "{{ organization | default('Default') }}"
-  - name: timesync_experience
+  - name: rhel_Pattern
     organization: "{{ organization | default('Default') }}"
-  - name: run_timesync_experience
+  - name: run_timesync_configuration
     organization: "{{ organization | default('Default') }}"
+
+# Execution Environments
+#
+controller_execution_environments:
+  - name: apd-ee-25-rhel
+    description: Allow running RHEL experience demo. Based on apd-ee-25.
+    image: quay.io/justinc1_github/apd-ee-25-experience:latest
+    pull: always
 
 # Projects
 #
 controller_projects:
-  - name: Ansible Portal Operations
+  - name: RHEL / Project
     organization: "{{ organization | default('Default') }}"
-    scm_branch: feature-rhel-aa
+    scm_branch: feature-service-aae
     scm_clean: false
     scm_delete_on_update: true
     scm_type: git
@@ -25,14 +33,15 @@ controller_projects:
 #
 controller_templates:
   - name: RHEL / Update RHEL Time Servers
+    description: This job template configures RHEL time synchronization
     ask_inventory_on_launch: true
-    playbook: extensions/experiences/rhel/playbooks/configure_timesync.yml
-    project: Ansible Portal Operations
+    playbook: extensions/patterns/timesync/playbooks/run_timesync_configuration.yml
+    project: RHEL / Project
     ask_variables_on_launch: false
     survey_enabled: true
     labels:
       - ansible.experience_demo
-      - timesync_experience
-      - run_timesync_experience
+      - rhel_Pattern
+      - run_timesync_configuration
     # experience.path - path to setup.yml, it is set by seedseed repo
     survey_spec: "{{ lookup('file', experience.path.replace('setup.yml', '') + 'template_surveys/configure_timesync.yml') | from_yaml }}"
