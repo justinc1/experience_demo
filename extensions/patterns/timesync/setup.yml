@@ -13,7 +13,7 @@ controller_labels:
 #
 controller_execution_environments:
   - name: apd-ee-25-rhel
-    description: Allow running RHEL experience demo. Based on apd-ee-25.
+    description: Allow running RHEL Ansible Pattern demo. Based on apd-ee-25.
     image: quay.io/justinc1_github/apd-ee-25-experience:latest
     pull: always
 
@@ -45,3 +45,5 @@ controller_templates:
       - run_timesync_configuration
     # pattern.path - path to setup.yml, it is set by ansible-pattern-loader repo
     survey_spec: "{{ lookup('file', pattern.path.replace('setup.yml', '') + 'template_surveys/configure_timesync.yml') | from_yaml }}"
+    ask_credential_on_launch: true
+    execution_environment: apd-ee-25-rhel
