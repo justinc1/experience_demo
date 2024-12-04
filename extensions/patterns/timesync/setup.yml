@@ -4,7 +4,7 @@
 controller_labels:
   - name: ansible.experience_demo
     organization: "{{ organization | default('Default') }}"
-  - name: rhel_Pattern
+  - name: rhel_pattern
     organization: "{{ organization | default('Default') }}"
   - name: run_timesync_configuration
     organization: "{{ organization | default('Default') }}"
@@ -41,7 +41,7 @@ controller_templates:
     survey_enabled: true
     labels:
       - ansible.experience_demo
-      - rhel_Pattern
+      - rhel_pattern
       - run_timesync_configuration
     # pattern.path - path to setup.yml, it is set by ansible-pattern-loader repo
     survey_spec: "{{ lookup('file', pattern.path.replace('setup.yml', '') + 'template_surveys/configure_timesync.yml') | from_yaml }}"
